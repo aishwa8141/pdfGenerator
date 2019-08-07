@@ -26,8 +26,7 @@ public class Converter {
     public static void pdfConverter() {
         File htmlSource = new File("src/main/resources/certificate/index.html");
         File pdfDest = new File("output.pdf");
-        File method1 = new File("method1.pdf");
-        File method2= new File("method2.pdf");
+
 
         try {
             ConverterProperties converterProperties = new ConverterProperties();
@@ -36,14 +35,14 @@ public class Converter {
             pdfDocument.setDefaultPageSize(PageSize.A4.rotate());
             System.out.println(pdfDocument.getDefaultPageSize());
 
-
-            HtmlConverter.convertToPdf(new FileInputStream(htmlSource),
-                    pdfDocument, converterProperties);
+//
+//            HtmlConverter.convertToPdf(new FileInputStream(htmlSource),
+//                    pdfDocument, converterProperties);
 
 
             HtmlConverter.convertToPdf(htmlSource, pdfDest);
 
-            HtmlConverter.convertToPdf(htmlSource, method2, converterProperties );
+//            HtmlConverter.convertToPdf(htmlSource, method2, converterProperties );
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
